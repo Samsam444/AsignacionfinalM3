@@ -1,5 +1,5 @@
 function jugarAhorcado(jugador) {
-    const palabrasAhorcado = ["luna", "lampara", "miel", "computadora", "numero", "bicicleta"];
+    const palabrasAhorcado = ["luna", "lampara", "miel", "computadora", "numero", "bicicleta", "internet", "termometro"];
     const palabraCompu = palabrasAhorcado[Math.floor(Math.random() * palabrasAhorcado.length)];
     let encontrarLetra = "_".repeat(palabraCompu.length).split("");
     let intentos = 5;
@@ -24,6 +24,7 @@ function jugarAhorcado(jugador) {
             continue;
         }
         LetrasUsadas.push(letra);
+
         let letraEncontrada = false;
         for (let i = 0; i < palabraCompu.length; i++) {
             if(palabraCompu[i] === letra){
@@ -31,7 +32,6 @@ function jugarAhorcado(jugador) {
                 letraEncontrada = true;
             }
         }
-
         if (!letraEncontrada) {
             intentosFallidos++;
             alert(`La letra ${letra} no está en la palabra. Te quedan ${intentos - intentosFallidos} intentos.`);
