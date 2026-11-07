@@ -1,11 +1,11 @@
-function jugarAhorcado(jugador) {
-    const palabrasAhorcado = ["luna", "lampara", "miel", "computadora", "numero", "bicicleta", "internet", "termometro"];
+ const palabrasAhorcado = ["murcielago", "lampara", "miel", "computadora", "numero", "bicicleta", "internet", "termometro"];
     const palabraCompu = palabrasAhorcado[Math.floor(Math.random() * palabrasAhorcado.length)];
     let encontrarLetra = "_".repeat(palabraCompu.length).split("");
     let intentos = 5;
     let intentosFallidos = 0;
     let LetrasUsadas = [];
 
+function jugarAhorcado(jugador) {
     while (intentosFallidos < intentos && encontrarLetra.includes("_")) {
         let estadoJuego = encontrarLetra.join(" ");
         let titulo = prompt(`Intenta adivinar la palabra: ${estadoJuego}\nTienes ${intentos - intentosFallidos} intentos\nLetras ya elegidas: ${LetrasUsadas.join(", ")}\nElige una letra:`);
